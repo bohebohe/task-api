@@ -16,6 +16,7 @@ Tests use Jest's mocking capabilities to mock the DynamoDB client interactions. 
 import { APIGatewayProxyEvent } from 'aws-lambda';
 import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
+```
 
 ## Test Instructions
 
@@ -51,7 +52,7 @@ describe('POST /tasks', () => {
 
 The test suite covers the following endpoints:
 
-POST /tasks
+### POST /tasks
 Creates new tasks
 
 Validates input
@@ -62,21 +63,21 @@ Returns 400 for invalid input
 
 Returns 201 with taskId on success
 
-GET /tasks/{id}
+### GET /tasks/{id}
 Retrieves individual tasks
 
 Returns 404 for non-existent tasks
 
 Returns 200 with task data on success
 
-GET /tasks
+### GET /tasks
 Retrieves all tasks
 
 Returns empty array when no tasks exist
 
 Returns 200 with task list on success
 
-PUT /tasks/{id}
+### PUT /tasks/{id}
 Updates existing tasks
 
 Returns 200 on successful update
@@ -124,6 +125,7 @@ test('retrieves item correctly', async () => {
   const item = await getItem('123');
   expect(item.name).toBe('Test Item');
 });
+```
 
 ### Verification of Interactions
 
